@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bootstrap & Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Floating Action Button (FAB) -->
+<div class="fab-container">
+  <input type="checkbox" id="fab-toggle" class="fab-toggle">
+  
+  <!-- Circular Options -->
+  <div class="fab-menu">
+    <a href="https://wa.me/919876543210" class="fab-item whatsapp" title="WhatsApp" target="_blank">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+    <a href="https://instagram.com/yourprofile" class="fab-item instagram" title="Instagram" target="_blank">
+      <i class="bi bi-instagram"></i>
+    </a>
+    <a href="tel:+919876543210" class="fab-item call" title="Call">
+      <i class="bi bi-telephone-fill"></i>
+    </a>
+  </div>
+
+  <!-- Main Toggle Button -->
+  <label for="fab-toggle" class="fab main-fab">
+    <i class="bi bi-person-fill"></i>
+  </label>
+</div>
+
+<style>
+  .fab-container {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 1000;
+  }
+
+  .fab-toggle {
+    display: none;
+  }
+
+  /* Main FAB */
+  .main-fab {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  /* Menu container */
+  .fab-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* Common style for all small icons */
+  .fab-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  /* WhatsApp position */
+  .whatsapp {
+    background-color: #25D366;
+    bottom: 60px;
+    right: 0;
+    transform-origin: center;
+  }
+
+  /* Instagram position */
+  .instagram {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+    bottom: 40px;
+    right: 40px;
+  }
+
+  /* Call position */
+  .call {
+    background-color: #007bff;
+    bottom: 0;
+    right: 60px;
+  }
+
+  /* When checkbox is checked → show icons */
+  .fab-toggle:checked ~ .fab-menu .fab-item {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Animate main FAB */
+  .fab-toggle:checked + .fab-menu + .main-fab {
+    transform: rotate(45deg);
+  }
+</style>
+
+</body>
+</html>
